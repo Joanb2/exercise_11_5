@@ -7,8 +7,12 @@ Button.prototype = {
 		var self = this;
 		this.$element = $('<button>');
 		this.$element.text(this.text);
-		this.$element.click(function(){
+		this.$element.on('click', function(){
 			alert(self.text);
+		});
+		this.$element.on('focus', function(){
+			var para = $('<p>Hey! Stop doing this! I am thicklish :[</p>');
+			$('body').append(para);
 		});
 		$('body').append(this.$element);
 	}
